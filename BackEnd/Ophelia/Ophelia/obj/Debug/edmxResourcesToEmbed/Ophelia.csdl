@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpheliaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseDate" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="BillDetails" Relationship="Self.FK__BillDetai__IdBil__33D4B598" FromRole="Bill" ToRole="BillDetail" />
+    <Property Name="IdClient" Type="Int32" />
+    <Property Name="IdCompany" Type="Int32" />
+    <NavigationProperty Name="Client" Relationship="OpheliaModel.FK__Bill__IdClient__36B12243" FromRole="Bill" ToRole="Client" />
+    <NavigationProperty Name="Company" Relationship="OpheliaModel.FK__Bill__IdCompany__37A5467C" FromRole="Bill" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="BillDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProduct" Type="Int32" />
+    <Property Name="IdBill" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__BillDetai__IdBil__33D4B598" FromRole="BillDetail" ToRole="Bill" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__BillDetai__IdPro__32E0915F" FromRole="BillDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DocType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DocNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bills" Relationship="OpheliaModel.FK__Bill__IdClient__36B12243" FromRole="Client" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Nit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bills" Relationship="OpheliaModel.FK__Bill__IdCompany__37A5467C" FromRole="Company" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Stock" Type="Int32" />
+    <NavigationProperty Name="BillDetails" Relationship="Self.FK__BillDetai__IdPro__32E0915F" FromRole="Product" ToRole="BillDetail" />
+  </EntityType>
+  <Association Name="FK__BillDetai__IdBil__33D4B598">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="0..1" />
+    <End Role="BillDetail" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="IdBill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BillDetai__IdPro__32E0915F">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="BillDetail" Type="Self.BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OpheliaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="BillDetails" EntityType="Self.BillDetail" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK__BillDetai__IdBil__33D4B598" Association="Self.FK__BillDetai__IdBil__33D4B598">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="BillDetail" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BillDetai__IdPro__32E0915F" Association="Self.FK__BillDetai__IdPro__32E0915F">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="BillDetail" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__IdClient__36B12243" Association="OpheliaModel.FK__Bill__IdClient__36B12243">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__IdCompany__37A5467C" Association="OpheliaModel.FK__Bill__IdCompany__37A5467C">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK__Bill__IdClient__36B12243">
+    <End Type="OpheliaModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="OpheliaModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="IdClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__IdCompany__37A5467C">
+    <End Type="OpheliaModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="OpheliaModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="IdCompany" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

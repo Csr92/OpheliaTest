@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26ca15e1ae4e448397c64cb6718eb162" Name="Diagram1">
+        <EntityTypeShape EntityType="OpheliaModel.Bill" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OpheliaModel.BillDetail" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OpheliaModel.Client" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OpheliaModel.Company" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OpheliaModel.Product" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="OpheliaModel.FK__Bill__IdClient__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="OpheliaModel.FK__Bill__IdCompany__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="OpheliaModel.FK__BillDetai__IdBil__40F9A68C" ManuallyRouted="false" />
+        <AssociationConnector Association="OpheliaModel.FK__BillDetai__IdPro__40058253" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

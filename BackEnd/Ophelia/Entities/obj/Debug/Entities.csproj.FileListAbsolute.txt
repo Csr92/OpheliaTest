@@ -1,0 +1,5 @@
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Entities\bin\Debug\Entities.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Entities\bin\Debug\Entities.pdb
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Entities\obj\Debug\Entities.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Entities\obj\Debug\Entities.pdb

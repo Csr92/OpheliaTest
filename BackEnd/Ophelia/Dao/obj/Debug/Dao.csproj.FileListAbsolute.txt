@@ -1,0 +1,14 @@
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\Dao.dll.config
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\Dao.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\Dao.pdb
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\Entities.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\EntityFramework.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\Entities.pdb
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\EntityFramework.xml
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\obj\Debug\Dao.dll
+C:\Users\CeSaR\Desktop\Ophelia\BackEnd\Ophelia\Dao\obj\Debug\Dao.pdb

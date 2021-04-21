@@ -1,0 +1,35 @@
+<p>client works!</p>
+<dx-data-grid id="gridContainer"
+    [dataSource]="dataSource"
+    [showBorders]="true"
+    [remoteOperations]="true">
+    <dxi-column
+        dataField="Id"
+        dataType="number">
+    </dxi-column>
+    <dxi-column
+        dataField="CName"
+        dataType="string">
+    </dxi-column>
+    <dxi-column
+        dataField="DocType"
+        dataType="string">
+    </dxi-column>
+    <dxi-column
+        dataField="DocNumber"
+        dataType="string">
+    </dxi-column>
+    <dxi-column
+        dataField="BirthDate"
+        dataType="date">
+    </dxi-column>
+    <dxi-column
+        dataField="Phone"
+        dataType="string">
+    </dxi-column>
+    <dxo-paging [pageSize]="12"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[8, 12, 20]"
+    ></dxo-pager>
+</dx-data-grid>
